@@ -1,9 +1,9 @@
-#include <opencv2/opencv.hpp>
-#include <opencv2/aruco.hpp>
 #include <iostream>
+#include <opencv2/aruco.hpp>
+#include <opencv2/opencv.hpp>
 
 int main(int argc, char* argv[]) {
-//    cv::VideoCapture cap("Pen Detection.mp4");
+    //    cv::VideoCapture cap("Pen Detection.mp4");
     int id = 0;
     if (argc == 2)
         id = std::atoi(argv[1]);
@@ -14,11 +14,11 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-
     double dwidth = cap.get(cv::CAP_PROP_FRAME_WIDTH);
     double dheight = cap.get(cv::CAP_PROP_FRAME_HEIGHT);
 
-    std::cout << "Resolution of the video: " << dwidth << " x " << dheight << std::endl;
+    std::cout << "Resolution of the video: " << dwidth << " x " << dheight
+              << std::endl;
 
     cv::namedWindow("Camera Feed");
     cv::Mat frame;
@@ -36,7 +36,8 @@ int main(int argc, char* argv[]) {
         cv::imshow("Camera Feed", frame);
 
         if (cv::waitKey(1) == 27) {
-            std::cout << "Escape key is pressed by user. Stopping the feed." << std::endl;
+            std::cout << "Escape key is pressed by user. Stopping the feed."
+                      << std::endl;
             break;
         }
     }
