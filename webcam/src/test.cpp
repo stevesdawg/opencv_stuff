@@ -19,6 +19,7 @@ int main(int argc, char* argv[]) {
 
     std::cout << "Resolution of the video: " << dwidth << " x " << dheight
               << std::endl;
+    std::cout << "Press [Esc] to exit." << std::endl;
 
     cv::namedWindow("Camera Feed");
     cv::Mat frame;
